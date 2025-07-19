@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About us Workwalaa</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+
+  </style>
+  <style>
+    .flip-card {
+      perspective: 1000px;
+    }
+    .flip-inner {
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      backface-visibility: hidden;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-yellow-50 font-sans">
+  <div class="p-4">
+    <!-- 🔝 Header -->
+    <header class="flex justify-between items-center p-6 bg-white shadow rounded-3xl">
+      <!-- Logo -->
+      <a href="#" class="block">
+        <img src="https://i.ibb.co/XxcHTJxh/Copy-of-workwalaa-Photoroom.png" alt="Workwalaa Logo" class="h-16 w-auto" />
+      </a>
+
+      <!-- Navigation -->
+      <nav class="space-x-3 text-gray-700">
+        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Home</a>
+        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Team</a>
+        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Vision</a>
+        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Updates</a>
+      </nav>
+
+      <!-- Contact Button -->
+      <div class="space-x-4">
+        <button
+          style="background-color: #fdd835;"
+          class="text-black px-6 py-3 rounded shadow 
+                 hover:shadow-lg 
+                 active:shadow-inner active:bg-black 
+                 focus:outline-none focus:ring-2 focus:ring-yellow-400 
+                 transition duration-200">
+          Contact us
+        </button>
+      </div>
+    </header>
+
+    <!-- 🎯 Hero Section -->
+    <section class="flex flex-col md:flex-row items-center justify-between px-4 py-12">
+      <!-- Text content -->
+      <div class="max-w-xl">
+        <h2 class="text-4xl font-bold mb-4">Workwalaa</h2>
+        <p class="text-black-600 mb-6">
+          Workwalaa unites migrant and local workers across India under a single online platform. 
+          We are creating a centralized system where workers can easily connect with job opportunities across India. 
+          We aim to streamline the process of finding and hiring these workers, benefiting both the workers and employers.
+        </p>
+<button 
+  style="background-color: #fdd835;" 
+  class="text-black px-6 py-3 rounded-full shadow transition hover:bg-yellow-500 hover:shadow-lg"
+>
+  Learn more
+</button>
+      </div>
+
+      <!-- Image -->
+      <div class="mt-8 md:mt-0 ml-10">
+        <img src="https://i.ibb.co/6hXS0FD/Copy-of-workwalaa-1-1.jpg" 
+             alt="Business owner" 
+             class="w-64 md:w-80 rounded-xl shadow-lg" />
+      </div>
+    </section>
+
+    <!-- 🧾 Cards Section -->
+    <section class="py-16 px-6 md:px-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Our Commitment to a Better Work Ecosystem</h2>
+      <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">
+    At Workwalaa, our purpose is rooted in creating a transparent, efficient, and human-centered digital work ecosystem. We envision a future where access to trusted job opportunities is seamless, especially for migrant and local workers across India. Our mission and vision guide every step we take toward building a platform that connects people, empowers employers, and redefines how work happens in the modern world.      </p>
+    </div>
+      <div class="cards-container">
+        <!-- Mission Card -->
+<div class="card">
+  <div class="card-content">
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Mission</h2>
+    <p class="text-center">
+      Our mission is to create a centralized digital platform that seamlessly connects migrant and local workers across India.
+      We aim to provide employers with real-time access to verified and trusted workers while ensuring that workers can easily find Jobs tailored to their skills and location.
+      By simplifying the hiring process and enhancing transparency, we strive to build a reliable and efficient labour ecosystem for all.
+    </p>
+  </div>
+</div>
+
+<!-- Vision Card -->
+<div class="card">
+  <div class="card-content">
+    <h2 class="text-2xl font-bold mb-4 text-center">Vision</h2>
+    <p class="text-center">
+      Our vision is to establish Workwalaa as Kerala’s most trusted and efficient digital platform for accessing work instantly — where opportunity naturally meets technology.
+      We aspire to become the first name that comes to mind when anyone thinks about work.
+      By leveraging our verified worker system and intelligent job-matching technology, we aim to build a transparent, reliable, and inclusive digital work ecosystem that benefits both employers and workers across the state.
+    </p>
+  </div>
+</div>
+</div>
+</section>
+ <!-- Glass Card -->
+  <section class="py-16 px-6 md:px-20 bg-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Every Company Rises with a Good Team</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-700">
+        Meet the core team of Conecxia who bring passion, strategy, and dedication to everything we build. Each member plays a vital role in driving our mission forward and shaping the future of local and migrant work connections.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-8 relative z-10">
+
+    <!-- Card 1 -->
+    <div class="flip-card w-[360px] h-[200px] relative">
+      <div class="flip-inner w-full h-full">
+
+        <!-- Front -->
+        <div class="flip-front absolute w-full h-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-2xl p-6 flex justify-between items-center text-black">
+  
+  <!-- Left Side: Image instead of icon -->
+  <div class="flex flex-col items-center text-center">
+    <!-- Image -->
+    <div class="mb-4">
+      <img src="https://i.ibb.co/5XnHGrbR/Copy-of-Untitled-Design-2-1.png" alt="Profile" class="w-21 h-21" />
+    </div>
+  </div>
+
+  <!-- Right Side: Name & Info -->
+  <div class="text-right">
+    <h2 class="text-xl font-semibold">Nihal Mundoli</h2>
+    <p class="text-sm text-black/70">CEO</p>
+    <p class="text-xs text-black/50">Calicut, Kerala</p>
+    <p class="text-xs mt-2 text-black/50">nihal.conecxia@gmail.com</p>
+  </div>
+  
+</div>
+
+
+        <!-- Back -->
+        <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
+          <h2 class="text-xl font-semibold">Nihal Mundoli</h2>
+          <p class="text-xs text-white/70 text-center"> Mohammed Nihal Mundoli is a young entrepreneur who started Workwalaa at 21 with a clear goal: to make it easier for businesses to connect with reliable local and migrant workers. While working closely with laborers and contractors, he saw how unstructured and inefficient the hiring process was for both sides</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="flip-card w-[360px] h-[200px] relative">
+      <div class="flip-inner w-full h-full">
+
+        <!-- Front -->
+        <div class="flip-front absolute w-full h-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-2xl p-6 flex justify-between items-center text-black">
+  
+  <!-- Left Side: Image instead of icon -->
+  <div class="flex flex-col items-center text-center">
+    <!-- Image -->
+    <div class="mb-4">
+      <img src="https://i.ibb.co/V0Vyq6Lx/Copy-of-Untitled-Design-4.png" alt="Profile" class="w-21 h-21" />
+    </div>
+  </div>
+
+  <!-- Right Side: Name & Info -->
+  <div class="text-right">
+    <h2 class="text-xl font-semibold">Farhan K</h2>
+    <p class="text-sm text-black/70">COO</p>
+    <p class="text-xs text-black/50">Malappuram, Kerala</p>
+    <p class="text-xs mt-2 text-black/50">farhan.conecxia@gmail.com</p>
+  </div>
+  
+</div>
+
+
+        <!-- Back -->
+        <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
+          <h2 class="text-xl font-semibold">Farhan K</h2>
+          <p class="text-xs text-white/70 text-center"> As the COO of Conecxia Enterprises, Farhan K plays a pivotal role in overseeing the company’s IT infrastructure and daily operations. With a strong focus on efficiency and execution, he ensures seamless workflow management by delegating tasks and assigning responsibilities to the right team members. His strategic approach to operations helps drive Conecxia’s mission of transforming workforce connectivity through technology and innovation </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+     <div class="flip-card w-[360px] h-[200px] relative">
+      <div class="flip-inner w-full h-full">
+
+        <!-- Front -->
+        <div class="flip-front absolute w-full h-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-2xl p-6 flex justify-between items-center text-black">
+  
+  <!-- Left Side: Image instead of icon -->
+  <div class="flex flex-col items-center text-center">
+    <!-- Image -->
+    <div class="mb-4">
+      <img src="https://i.ibb.co/jZjNgcs2/Copy-of-Untitled-Design-3.png" alt="Profile" class="w-21 h-21" />
+    </div>
+  </div>
+
+  <!-- Right Side: Name & Info -->
+  <div class="text-right">
+    <h2 class="text-xl font-semibold"> Siddharth S Nair</h2>
+    <p class="text-sm text-black/70">CBO</p>
+    <p class="text-xs text-black/50">Calicut, Kerala</p>
+    <p class="text-xs mt-2 text-black/50">Siddharth.conecxia@gmail.com</p>
+  </div>
+  
+</div>
+
+
+        <!-- Back -->
+        <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
+          <h2 class="text-xl font-semibold">Siddharth S Nair</h2>
+          <p class="text-xs text-white/70 text-center"> As the Chief Business Officer at Conecxia Enterprises, Sidharth S Nair plays a pivotal role in driving the company’s business growth and strategic direction. He leads the development of marketing and advertising strategies, conducts comprehensive market analysis, and assesses business risks to support data-driven decision-making. With a sharp analytical mindset, he provides actionable insights on performance metrics and resource optimization.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </section>
+</body>
+</html>
