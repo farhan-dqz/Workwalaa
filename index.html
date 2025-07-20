@@ -21,6 +21,7 @@
   <meta name="twitter:description" content="Smart technology platform connecting workers with opportunities in India">
   <meta name="twitter:image" content="https://i.ibb.co/7dKvTqvZ/Untitled-design-7.png">
   <script type="application/ld+json">
+
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -447,19 +448,40 @@ nav a:focus {
     <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navigation">☰</button>
     <nav role="navigation" aria-label="Main navigation">
       <a href="#home">Home</a>
-      <a href="#cta">Careers</a>
+      <a href="#contact">Careers</a>
       <a href="https://farhan-dqz.github.io/Workwalaa/aboutus.html" class="text-black px-4 py-2">About us</a>
       <a href="#contact">Contact Us</a>
     </nav>
   </header>
   <script>
  const phrases = [
-  "  Cleaning Services ",
-  "  Constructional Works ",
-  "  Agricultural Jobs ",
-  "  Padav Helper ",
-  "  Thepp and More "
+  "Cleaning Services",
+  "Constructional Works",
+  "Agricultural Works",
+  "Padav",
+  "Thepp",
+  "Centring",
+  "Concrete Helper",
+  "Painting",
+  "Roofing",
+  "Tile",
+  "Kinar Pani",
+  "Kall Pani",
+  "Loading Unloading",
+  "Cutting Woods",
+  "Nell Koyyal",
+  "Theng Thadam",
+  "Vazha Pani",
+  "Vegetables Medicine",
+  "Valam",
+  "Cleaning 800",
+  "House Cleaning",
+  "Inside Outside",
+  "Maid Women Supply",
+  "Tank Cleaning",
+  "Farm Works"
 ];
+
 
 let i = 0;
 let j = 0;
@@ -524,9 +546,14 @@ document.addEventListener("DOMContentLoaded", loop);
             Download
           </button>
 
-<a href="https://www.workwalaa.com/aboutus.html">
-  <button id="about-btn" aria-label="Learn more about Workwalaa">🌐︎ About us</button>
-</a>
+<button id="about-btn" aria-label="Learn more about Workwalaa">🌐︎ About us</button>
+
+<script>
+  document.getElementById('about-btn').addEventListener('click', function() {
+    window.location.href = 'https://www.workwalaa.com/aboutus.html';
+  });
+</script>
+
         </div>
       </div>
       <div class="hero-image">
@@ -592,7 +619,7 @@ document.addEventListener("DOMContentLoaded", loop);
     const subject = encodeURIComponent("Message from Website");
     const body = encodeURIComponent(`Name: ${name}\n\nEmail: ${email}\n\nMessage:\n\n${message}`);
     
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=conecxia@gmail.com&su=${subject}&body=${body}`;
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=info@workwalaa.com&su=${subject}&body=${body}`;
     
     window.open(gmailURL, '_blank');
   }
