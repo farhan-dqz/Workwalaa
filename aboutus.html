@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,42 +10,95 @@
 
 
   <style>
-    body {
+    html {
+  scroll-behavior: smooth;
+}
+
+     body {
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
       margin: 0;
       padding: 2rem;
     }
 
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: white;
-      display: flex;
+  /* Responsive for tablets and up */
+  @media (min-width: 768px) {
+    .intro-section {
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      transition: transform 0.3s;
+      padding: 4rem 6rem;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .intro-text {
+      text-align: left;
     }
 
-    .card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-right: 1.5rem;
+    .intro-image {
+      margin-left: 3rem;
     }
 
-  </style>
+    .intro-text h2 {
+      font-size: 3rem;
+    }
+
+    .intro-text p {
+      font-size: 1.125rem;
+    }
+  }
+</style>
+
+<style>
+/* Card layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* reduced min width for smaller screens */
+  gap: 1.5rem;
+}
+
+.card {
+  background: #ffe876;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+  .card {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .card img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+</style>
   <style>
     .flip-card {
       perspective: 1000px;
@@ -63,7 +117,10 @@
       transform: rotateY(180deg);
     }
   </style>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body class="bg-yellow-50 font-sans">
@@ -76,24 +133,25 @@
       </a>
 
       <!-- Navigation -->
-      <nav class="space-x-3 text-gray-700">
-        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Home</a>
-        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Team</a>
-        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Vision</a>
-        <a href="#" class="relative px-3 py-2 rounded-full hover:text-black hover:bg-black/10">Updates</a>
-      </nav>
-
+     <nav class="flex flex-wrap justify-center gap-2 text-gray-700 text-base">
+  <a href="www.workwalaa.com" class="px-2 py-1 hover:text-black">Home</a>
+  <a href="#team" class="px-2 py-1 hover:text-black">Team</a>
+  <a href="#mission" class="px-2 py-1 hover:text-black">Mission</a>
+  <a href="#" class="px-2 py-1 hover:text-black">Blog</a>
+</nav>
       <!-- Contact Button -->
       <div class="space-x-4">
-        <button
-          style="background-color: #fdd835;"
-          class="text-black px-6 py-3 rounded shadow 
-                 hover:shadow-lg 
-                 active:shadow-inner active:bg-black 
-                 focus:outline-none focus:ring-2 focus:ring-yellow-400 
-                 transition duration-200">
-          Contact us
-        </button>
+        <a href="https://wa.me/918156801024" target="_blank" rel="noopener noreferrer">
+  <button
+    style="background-color: #fdd835;"
+    class="text-black px-6 py-3 rounded shadow 
+           hover:shadow-lg 
+           active:shadow-inner active:bg-black 
+           focus:outline-none focus:ring-2 focus:ring-yellow-400 
+           transition duration-200">
+    Contact us
+  </button>
+</a>
       </div>
     </header>
 
@@ -123,8 +181,9 @@
       </div>
     </section>
 
+
     <!-- 🧾 Cards Section -->
-    <section class="py-16 px-6 md:px-20">
+    <section id="mission" class="py-16 px-6 md:px-20">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold">Our Commitment to a Better Work Ecosystem</h2>
       <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-700">
@@ -158,9 +217,9 @@
 </div>
 </section>
  <!-- Glass Card -->
-  <section class="py-16 px-6 md:px-20 bg-white">
+  <section id="team" class="py-16 px-6 md:px-20 bg-white">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold">Every Company Rises with a Good Team</h2>
+      <h2 class="text-3xl md:text-4xl font-bold">People Who Turn Vision into Reality</h2>
       <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-700">
         Meet the core team of Conecxia who bring passion, strategy, and dedication to everything we build. Each member plays a vital role in driving our mission forward and shaping the future of local and migrant work connections.
       </p>
@@ -182,7 +241,7 @@
       <img src="https://i.ibb.co/5XnHGrbR/Copy-of-Untitled-Design-2-1.png" alt="Profile" class="w-21 h-21" />
     </div>
   </div>
-
+  
   <!-- Right Side: Name & Info -->
   <div class="text-right">
     <h2 class="text-xl font-semibold">Nihal Mundoli</h2>
@@ -196,7 +255,8 @@
 
         <!-- Back -->
         <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
-          <h2 class="text-xl font-semibold">Nihal Mundoli</h2>
+        <a href="https://www.linkedin.com/in/mohammednihalmundoli" target="_blank" >
+        <h2 class="text-xl text-center font-semibold">Nihal Mundoli</h2>
           <p class="text-xs text-white/70 text-center">Mohammed Nihal Mundoli, Founder and CEO of Workwalaa, founded Workwalaa at 21 to make it easier for businesses to find trusted workers. While working closely with workers and people on the ground, he saw the challenges both sides faced in accessing reliable jobs and help when needed. That insight sparked the idea for Workwalaa. Nihal believes in using technology to solve real-world problems, especially for those left out of the formal job market. His leadership at Workwalaa is rooted in trust, dignity, and real world opportunity.</p>
         </div>
       </div>
@@ -207,7 +267,7 @@
       <div class="flip-inner w-full h-full">
 
         <!-- Front -->
-        <div class="flip-front absolute w-full h-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-2xl p-6 flex justify-between items-center text-black">
+        <div class="flip-front absolute w-full h-full bg-white/70 backdrop-blur-md border border-white/40 rounded-2xl shadow-2xl p-6 flex justify-between items-center text-black">
   
   <!-- Left Side: Image instead of icon -->
   <div class="flex flex-col items-center text-center">
@@ -230,8 +290,10 @@
 
         <!-- Back -->
         <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
-          <h2 class="text-xl font-semibold">Farhan K</h2>
-          <p class="text-xs text-white/70 text-center">As the *Co-founder* and *Chief Operating Officer* at Workwalaa, *Farhan K* plays a pivotal role in overseeing the company’s IT infrastructure and daily operations. With a strong focus on efficiency and execution, he ensures seamless workflow management by delegating tasks and assigning responsibilities to the right team members. His strategic approach to operations helps drive Workwalaa’s mission of transforming workforce connectivity through technology and innovation. </p>
+          <a href="https://www.linkedin.com/in/farhandqz/" target="_blank" >
+          <h2 class="text-xl text-center font-semibold animate-text">Farhan K</h2>
+         <p class="text-xs text-white/70 text-center animate-text">As the Co-founder and Chief Operating Officer at Workwalaa, Farhan K plays a pivotal role in overseeing the company’s IT infrastructure and daily operations. With a strong focus on efficiency and execution, he ensures seamless workflow management by delegating tasks and assigning responsibilities to the right team members. His strategic approach to operations helps drive Workwalaa’s mission of transforming workforce connectivity through technology and innovation.</p>
+        </a>
         </div>
       </div>
     </div>
@@ -264,8 +326,10 @@
 
         <!-- Back -->
         <div class="flip-back absolute w-full h-full bg-gray-800 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center">
-          <h2 class="text-xl font-semibold">Siddharth S Nair</h2>
-          <p class="text-xs text-white/70 text-center"> As the *Co-founder* and *Chief Business Officer* at Workwalaa, *Sidharth S Nair* plays a pivotal role in driving the company’s business growth and strategic direction. He leads the development of marketing and advertising strategies, conducts comprehensive market analysis, and assesses business risks to support data-driven decision-making. With a sharp analytical mindset, he provides actionable insights on performance metrics and resource optimization.</p>
+                    <a href="https://www.linkedin.com/in/sid-nair7/" target="_blank" >
+
+          <h2 class="text-xl text-center font-semibold">Siddharth S Nair</h2>
+          <p class="text-xs text-white/70 text-center"> As the Co-founder and Chief Business Officer at Workwalaa, Sidharth S Nair plays a pivotal role in driving the company’s business growth and strategic direction. He leads the development of marketing and advertising strategies, conducts comprehensive market analysis, and assesses business risks to support data-driven decision-making. With a sharp analytical mindset, he provides actionable insights on performance metrics and resource optimization.</p>
         </div>
       </div>
     </div>
