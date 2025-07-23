@@ -23,28 +23,59 @@
   <meta name="twitter:description" content="Smart technology platform connecting workers with opportunities in India">
   <meta name="twitter:image" content="https://i.ibb.co/7dKvTqvZ/Untitled-design-7.png">
   <script type="application/ld+json">
-
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Workwalaa",
-    "description": "Connecting migrant and local workers with job opportunities in India",
-    "url": "https://workwalaa.com",
-    "logo": "https://i.ibb.co/7dKvTqvZ/Untitled-design-7.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://workwalaa.com/#organization",
+      "name": "Workwalaa",
+      "url": "https://workwalaa.com",
+      "logo": "https://i.ibb.co/7dKvTqvZ/Untitled-design-7.png",
+      "description": "Connecting migrant and local workers with job opportunities in India",
+      "email": "info@workwalaa.com",
       "telephone": "+91-81568-01024",
-      "contactType": "customer service",
-      "email": "info@workwalaa.com"
+      "sameAs": [
+        "https://x.com/workwalaa_app",
+        "https://www.facebook.com/profile.php?id=61578621201819",
+        "https://www.linkedin.com/company/workwalaa/",
+        "https://www.instagram.com/workwalaa_app/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-81568-01024",
+        "contactType": "customer service",
+        "email": "info@workwalaa.com"
+      }
     },
-    "sameAs": [
-      "https://x.com/workwalaa_app",
-      "https://www.facebook.com/profile.php?id=61578621201819",
-      "https://www.linkedin.com/company/workwalaa/",
-      "https://www.instagram.com/workwalaa_app/"
-    ]
-  }
-  </script>
+    {
+      "@type": "WebSite",
+      "@id": "https://workwalaa.com/#website",
+      "url": "https://workwalaa.com",
+      "name": "Workwalaa",
+      "publisher": {
+        "@id": "https://workwalaa.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://workwalaa.com/#webpage",
+      "url": "https://workwalaa.com",
+      "name": "Workwalaa - Connecting Work to Worth",
+      "description": "Smart platform connecting local and migrant workers in India with verified jobs and fair pay.",
+      "isPartOf": {
+        "@id": "https://workwalaa.com/#website"
+      },
+      "about": {
+        "@id": "https://workwalaa.com/#organization"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+
 
   <!-- Preload Critical Resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Maven+Pro:wght@400;700&display=swap" as="style">
