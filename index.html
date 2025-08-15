@@ -106,7 +106,50 @@
       --shadow-md: 0 4px 24px rgba(0,0,0,0.06);
       --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
     }
-
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  /* Modal content */
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+  }
+  .modal h1, .modal h2 {
+    color: #333;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: black;
+  }
+  .close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close2:hover {
+    color: black;
+  }
     /* --------------- Base reset & Defaults --------------- */
     html { scroll-behavior: smooth; font-size: 16px; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -613,8 +656,175 @@ nav a:focus {
     <!-- Right: Links -->
     <nav class="footer-section footer-links" aria-label="Footer navigation">
       <a href="#contact">FAQ</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Privacy Policy</a>
+<!-- Trigger Button -->
+<a href="#" id="termsBtn">Terms of Service</a>
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+<h1>Terms & Conditions – Workwalaa</h1>
+<p><em>Last updated: 13/08/2025</em></p>
+
+<p>Workwalaa is operated by <strong>Conecxia Enterprises LLP</strong> (“we,” “us,” “our”), registered in India under LLPIN [LLPIN]. By using our mobile applications (“Worker App,” “Client App”) and services, you (“you,” “your,” whether Worker, Contractor, or Client) agree to these Terms & Conditions (“Terms”). If you do not agree, please do not use Workwalaa.</p>
+
+
+<h2>1. Who Can Use Workwalaa</h2>
+<ul>
+    You must be <strong>18 years or older</strong> to create an account.
+    You must have the legal capacity to enter into binding agreements under Indian law.
+    Workers must provide accurate details including name, age, contact number, and any mandatory KYC documents.
+</ul>
+
+
+<h2>2. Our Services</h2>
+<ul>
+    <strong>For Clients</strong> – We connect you to workers or contractors based on your job requirements.
+    <strong>For Workers</strong> – We help you find job opportunities that match your skills and location.
+    <strong>For Contractors</strong> – We connect you to clients and help you manage your workforce.
+</ul>
+<p>We are a <strong>technology platform only</strong> – <strong>we do not employ, manage, or control the workers</strong> and are not responsible for the quality, safety, legality, or completion of any work.</p>
+
+
+<h2>3. Information We Collect</h2>
+<p>When you use Workwalaa, we collect:</p>
+<ul>
+    <strong>Personal details</strong>: Name, phone number, email, gender, date of birth, Aadhaar/PAN (if provided).
+    <strong>Location data</strong>: GPS location during app usage.
+    <strong>Employment data</strong>: Skills, work history, ratings/reviews.
+    <strong>Device data</strong>: IP address, device model, operating system.
+    <strong>Media uploads</strong>: Profile pictures, documents, resumes.
+    <strong>Financial details</strong>: Bank account or UPI ID for payouts.
+</ul>
+<p>We also use third-party tools like WhatsApp API, SMS providers, payment gateways, and analytics services to operate and improve our platform.</p>
+
+
+<h2>4. How We Use Your Data</h2>
+<ul>
+    Provide and improve our services.
+    Match workers with clients/contractors.
+    Communicate with you via app notifications, WhatsApp, SMS, or email.
+    Process payments and payouts.
+    Conduct analytics for service improvement.
+</ul>
+<p>By using Workwalaa, you agree to our <strong>Privacy Policy</strong>.</p>
+
+
+<h2>5. Payments</h2>
+<ul>
+    Client payments and worker payouts are processed via third-party payment gateways.
+    Workwalaa is not responsible for any delays, failures, or technical errors in payment processing caused by banks or payment partners.
+</ul>
+
+
+<h2>6. No Guarantee & No Liability</h2>
+<ul>
+    We do not guarantee that you will find work, hire a worker, or that any job will be completed to your satisfaction.
+    We are not responsible for disputes, damages, injuries, fraud, or any losses arising from jobs arranged through Workwalaa.
+    <strong>Liability Cap:</strong> If we are ever held liable by a court, our total liability will be <strong>₹0</strong>.
+</ul>
+
+
+<h2>7. Prohibited Use</h2>
+<ul>
+    Provide false information or fake documents.
+    Use the platform for illegal or harmful activities.
+    Circumvent Workwalaa to avoid using the platform for future jobs.
+</ul>
+
+
+<h2>8. Account Suspension & Termination</h2>
+<p>We may suspend or terminate your account if you:</p>
+<ul>
+    Violate these Terms.
+    Engage in fraud, harassment, or illegal activities.
+    Abuse or misuse the platform.
+</ul>
+
+
+<h2>9. No Employment Relationship</h2>
+<ul>
+    Workwalaa is <strong>not an employer</strong>.
+    All arrangements are <strong>directly between Client and Worker/Contractor</strong>.
+    You are solely responsible for complying with applicable labour laws.
+</ul>
+
+
+<h2>10. Governing Law & Jurisdiction</h2>
+<p>These Terms are governed by the laws of <strong>India</strong>, and disputes will be resolved in the courts of <strong>Ernakulam, Kerala</strong>.</p>
+
+
+<h2>11. Changes to These Terms</h2>
+<p>We may update these Terms at any time. Continued use of the platform means you accept the updated Terms.</p>
+
+
+<h2>12. Contact Us</h2>
+<p>If you have questions, email us at: <strong>info@workwalaa.com</strong></p>
+
+  </div>
+</div>
+
+<a href="#" id="prvcybtn">Privacy Policy</a>
+<!-- The Modal -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closePrivacy">&times;</span>
+
+    
+<h2>Privacy Policy</h2>
+    <p><strong>Conecxia Enterprises LLP</strong> Conecxia Enterprises LLP (“Workwalaa”, “we”, “our”, “us”) built the Workwalaa Worker App and Workwalaa Client App (together, the “Apps”) as service-based applications to connect workers, contractors, and clients efficiently. These Services are provided by Conecxia Enterprises LLP at no cost to registered users and are intended for use as described in this Privacy Policy.
+
+This page is used to inform users of our policies regarding the collection, use, and disclosure of Personal Information if anyone decides to use our Services.<br>
+
+By downloading, accessing, or using our Apps, you agree to the collection and use of information in accordance with this policy. The Personal Information we collect is used for providing, improving, and securing the Service. We do not use or share your information with anyone except as described in this Privacy Policy.<br>
+
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions unless otherwise defined here.</p>
+    
+    <h3>1. Information We Collect</h3>
+    <ul>
+      <strong>Personal Details:</strong> Name, mobile number, email, gender, date of birth, Aadhaar/PAN.
+      <strong>Location Data:</strong> Real-time location during service use.
+      <strong>Employment Details:</strong> Skills, work history, references, ratings, and reviews.
+      <strong>Device Data:</strong> IP address, device model, OS, app version.
+      <strong>Media Uploads:</strong> Profile picture, resumes, identity documents.
+      <strong>Financial Details:</strong> Bank account details, UPI ID, and payment history.
+    </ul>
+
+    <h3>2. Third-Party Services</h3>
+    <p>We use third-party services that may collect information ...</p>
+
+    <h3>3. Use of Information</h3>
+    <p>We use collected data for service management, job matching, communication, payments, security, and analytics.</p>
+
+    <h3>4. Information Sharing</h3>
+    <p>We may share your information with employers, contractors, and third-party providers for service purposes.</p>
+
+    <h3>5. Log Data</h3>
+    <p>In case of an error, we collect Log Data like device IP, model, OS version, app configuration, and date/time.</p>
+
+    <h3>6. Cookies & Tracking</h3>
+    <p>We do not use cookies directly, but third-party SDKs may use similar technologies.</p>
+
+    <h3>7. Data Retention & Deletion</h3>
+    <p>We do not offer in-app account deletion; users may log out anytime. Some data may be retained for legal reasons.</p>
+
+    <h3>8. Children’s Privacy</h3>
+    <p>We do not allow users below 18 years old to register.</p>
+
+    <h3>9. Security</h3>
+    <p>We use encryption and access controls, but no system is 100% secure.</p>
+
+    <h3>10. Consent</h3>
+    <p>By using our services, you consent to our data practices.</p>
+
+    <h3>11. Changes to This Privacy Policy</h3>
+    <p>We may update our policy; changes will be posted here.</p>
+
+    <h3>12. Contact Us</h3>
+    <p>Email: <strong>info@workwalaa.com</strong><br>
+       Conecxia Enterprises LLP, Kerala, India<br>
+       <em>Effective Date: 12 August 2025</em></p>
+  </div>
+</div>
 <div class="footer-bottom">&copy; 2025 Workwalaa. All Rights Reserved.</div>
     </nav>
   </div>
@@ -623,6 +833,46 @@ nav a:focus {
 
 
 
+<script>
+// Open Privacy Policy Modal (Modal 2)
+document.getElementById("prvcybtn").onclick = function(e) {
+  e.preventDefault();
+  document.getElementById("privacyModal").style.display = "block";
+}
+
+// Close Privacy Policy Modal when clicking X
+document.getElementById("closePrivacy").onclick = function() {
+  document.getElementById("privacyModal").style.display = "none";
+}
+
+// Close Privacy Policy Modal when clicking outside
+window.addEventListener("click", function(e) {
+  if (e.target == document.getElementById("privacyModal")) {
+    document.getElementById("privacyModal").style.display = "none";
+  }
+});
+</script>
+<script>
+  // Terms modal
+  const termsModal = document.getElementById("termsModal");
+  const termsBtn = document.getElementById("termsBtn");
+  const termsClose = document.getElementsByClassName("close")[0];
+
+  termsBtn.onclick = function(e) {
+    e.preventDefault();
+    termsModal.style.display = "block";
+  }
+
+  termsClose.onclick = function() {
+    termsModal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == termsModal) {
+      termsModal.style.display = "none";
+    }
+  }
+</script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.querySelector('.menu-toggle');
