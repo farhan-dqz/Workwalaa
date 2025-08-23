@@ -634,10 +634,13 @@ nav a:focus {
       <button class="close-btn" id="close-popup">&times;</button>
       <h2>We are launching soon </h2>
       <p>Please provide your email to get the updates</p>
-      <form>
-        <input type="email" id="user-email" placeholder="Enter Email" autocomplete="email" required>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
+      <form onsubmit="sendEmail(event)">
+    <input type="email" id="user-email" placeholder="Enter Email" autocomplete="email" required>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+
+
     </div>
   </div>
 
@@ -1067,6 +1070,20 @@ window.addEventListener("click", function(e) {
       }
     });
   </script>
+
+  <script>
+function sendEmail(event) {
+    event.preventDefault(); // Prevent form from refreshing
+    const userEmail = document.getElementById("user-email").value;
+
+    const subject = "I would like to install the beta version of app";
+    const body = `Hello,\n\nMy email: ${userEmail}\n\nI would like to install the beta version of the app.`;
+
+    const mailtoLink = `mailto:conecxia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+}
+</script>
 
 
 </body>
