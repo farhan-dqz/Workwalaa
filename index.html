@@ -107,7 +107,38 @@
       --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
     }
 
+.slider {
+      position: relative;
+      height: 50px;
+      width: 300px;
+      overflow: hidden;
+    }
 
+    .slide-text {
+      position: absolute;
+      width: 100%;
+      text-align: left;
+      font-size: 28px;
+      font-family: "Maven Pro";
+
+      margin-left: -47.8px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlide 12s infinite;
+    }
+
+    .slide-text:nth-child(1) { animation-delay: 0s; }
+    .slide-text:nth-child(2) { animation-delay: 3s; }
+    .slide-text:nth-child(3) { animation-delay: 6s; }
+    .slide-text:nth-child(4) { animation-delay: 9s; }
+
+    @keyframes fadeSlide {
+      0%   { opacity: 0; transform: translateY(30px); }
+      10%  { opacity: 1; transform: translateY(0); }
+      25%  { opacity: 1; transform: translateY(0); }
+      35%  { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 0; transform: translateY(-30px); }
+    }
   .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -624,6 +655,12 @@ nav a:focus {
       </div>
 
       <h1>Connecting Work <br>to Worth</h1>
+       <div class="slider">
+    <div class="slide-text">⚡ Helpers</div>
+    <div class="slide-text">🔧 Roofing</div>
+    <div class="slide-text">🪚 Cleaning</div>
+    <div class="slide-text">🎨 Agricultural works</div>
+  </div>
       <p>We match people to purpose using smart technology to turn every job into meaningful opportunity.</p>
 
       <div class="hero-buttons">
@@ -636,9 +673,11 @@ nav a:focus {
       <button class="close-btn" id="close-popup">&times;</button>
       <h2>We are launching soon </h2>
       <p>Please provide your email to get the updates</p>
-      <form onsubmit="sendEmail(event)">
+      <form onsubmit="sendEmail(event)" action="mailto:conecxia@gmail.com?subject=I like to get the early access of the app" method="post" enctype="text/plain">
     <input type="email" id="user-email" placeholder="Enter Email" autocomplete="email" required>
-    <button type="submit" class="submit-btn">Submit</button>
+<a href="mailto:conecxia@gmail.com?subject=I like to get the early access of the app">
+  <button type="button" class="submit-btn">Submit</button>
+</a>
 </form>
 
 
