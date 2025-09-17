@@ -121,7 +121,7 @@
       font-size: 28px;
       font-family: "Maven Pro";
 
-      margin-left: -47.8px;
+      margin-left: -0.1rem;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeSlide 12s infinite;
@@ -131,6 +131,17 @@
     .slide-text:nth-child(2) { animation-delay: 3s; }
     .slide-text:nth-child(3) { animation-delay: 6s; }
     .slide-text:nth-child(4) { animation-delay: 9s; }
+    .slide-text:nth-child(5) { animation-delay: 12s; }
+    .slide-text:nth-child(6) { animation-delay: 15s; }
+    .slide-text:nth-child(7) { animation-delay: 18s; }
+    .slide-text:nth-child(8) { animation-delay: 21s; }
+    .slide-text:nth-child(9) { animation-delay: 24s; }
+    .slide-text:nth-child(9) { animation-delay: 27s; }
+    .slide-text:nth-child(19) { animation-delay: 30s; }
+
+
+
+
 
     @keyframes fadeSlide {
       0%   { opacity: 0; transform: translateY(30px); }
@@ -316,6 +327,8 @@ nav a:focus {
   min-height: 1.0em;
   transition: all 0.3s ease-in-out; /* Smooth visual transition */
   display: flex;
+        margin-left: 1rem;
+
 }
 
 .cursor {
@@ -338,6 +351,8 @@ nav a:focus {
     justify-content: center;    /* center horizontally */
     align-items: center;        /* center vertically if you want */
     text-align: center;         /* center text inside */
+      margin-left: 1rem;
+
   }
 
   .slide-text {
@@ -345,6 +360,9 @@ nav a:focus {
     text-align: center;          /* center text */
     display: flex;               /* helps center emoji + text */
     justify-content: center;
+          margin-left: 5rem;
+
+
   }
 }
 
@@ -438,7 +456,8 @@ nav a:focus {
 
   .contact-content {
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0 0rem;
+    
   }
 }
 
@@ -675,10 +694,15 @@ nav a:focus {
 
       <h1>Connecting Work <br>to Worth</h1>
        <div class="slider">
-    <div class="slide-text">⚡ Helpers</div>
-    <div class="slide-text">🔧 Roofing</div>
-    <div class="slide-text">🪚 Cleaning</div>
-    <div class="slide-text">🎨 Agricultural works</div>
+    <div class="slide-text"> Construction </div>
+    <div class="slide-text"> Helpers</div>
+    <div class="slide-text"> Roofing</div>
+    <div class="slide-text"> Agriculture </div>
+    <div class="slide-text"> Padav</div>
+    <div class="slide-text"> Thepp</div>
+    <div class="slide-text"> Cleaning</div>
+    <div class="slide-text"> Loading</div>
+   <div class="slide-text"> Unloading</div>
   </div>
       <p>We match people to purpose using smart technology to turn every job into meaningful opportunity.</p>
 
@@ -767,7 +791,7 @@ nav a:focus {
           <button type="button" onclick="sendViaGmail()">Send Via Mail</button>
          <div id="contact-success" role="alert" aria-live="polite">Thank you! We'll get back to you soon.</div></form>
       </div>
-      <script>
+     <script>
   function sendViaGmail() {
     const name = document.getElementById('contact-name').value;
     const email = document.getElementById('contact-email').value;
@@ -775,12 +799,22 @@ nav a:focus {
 
     const subject = encodeURIComponent("Message from Website");
     const body = encodeURIComponent(`Name: ${name}\n\nEmail: ${email}\n\nMessage:\n\n${message}`);
-    
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=info@workwalaa.com&su=${subject}&body=${body}`;
-    
-    window.open(gmailURL, '_blank');
+
+    // Detect if user is on mobile
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // On phones → open Gmail app (mailto)
+      const mailtoURL = `mailto:info@workwalaa.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoURL;
+    } else {
+      // On desktop → open Gmail website as before
+      const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=info@workwalaa.com&su=${subject}&body=${body}`;
+      window.open(gmailURL, '_blank');
+    }
   }
 </script>
+
 
     </section>
   </main>
