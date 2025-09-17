@@ -329,6 +329,20 @@ nav a:focus {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+@media (max-width: 768px) {
+  .slider {
+    align-items: center;
+    text-align: center;
+  }
+  .slide-text {
+    text-align: center;
+    justify-content: center;
+  }
+.sliding-text-wrapper {
+    text-align: center;
+    justify-content: center;
+  }
+}
 
 
 
@@ -1113,19 +1127,30 @@ window.addEventListener("click", function(e) {
     });
   </script>
 
-  <script>
+<script>
 function sendEmail(event) {
-    event.preventDefault(); // Prevent form from refreshing
+    event.preventDefault(); // Prevent form refresh
     const userEmail = document.getElementById("user-email").value;
 
     const subject = "I would like to install the beta version of app";
-    const body = `Hello,\n\nMy email: ${userEmail}\n\nI would like to install the beta version of the app.`;
+    const body = `Hello,%0D%0A%0D%0AMy email: ${encodeURIComponent(userEmail)}%0D%0A%0D%0AI would like to install the beta version of the app.`;
 
-    const mailtoLink = `mailto:conecxia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Detect if user is on mobile
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    window.location.href = mailtoLink;
+    if (isMobile) {
+        // On mobile → open Gmail app using mailto
+        window.location.href = `mailto:conecxia@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    } else {
+        // On PC → open Gmail Web directly
+        window.open(
+          `https://mail.google.com/mail/?view=cm&fs=1&to=conecxia@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`,
+          "_blank"
+        );
+    }
 }
 </script>
+
 
 
 </body>
