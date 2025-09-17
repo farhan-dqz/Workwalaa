@@ -329,20 +329,25 @@ nav a:focus {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+/* your existing styles stay as they are */
+
+/* --- Add only this --- */
 @media (max-width: 768px) {
   .slider {
-    align-items: center;
-    text-align: center;
+    display: flex;              /* flexbox only on phones */
+    justify-content: center;    /* center horizontally */
+    align-items: center;        /* center vertically if you want */
+    text-align: center;         /* center text inside */
   }
+
   .slide-text {
-    text-align: center;
-    justify-content: center;
-  }
-.sliding-text-wrapper {
-    text-align: center;
+    width: 100%;                /* span full width so text-align works */
+    text-align: center;          /* center text */
+    display: flex;               /* helps center emoji + text */
     justify-content: center;
   }
 }
+
 
 
 
