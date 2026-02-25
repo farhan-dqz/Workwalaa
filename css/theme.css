@@ -1,0 +1,235 @@
+/* =========================================
+   THEME OVERRIDES & LIGHT MODE POLISH
+   ========================================= */
+:root:has(body.light-theme),
+body.light-theme {
+  --bg-base: #f4f6f8;
+  --bg-surface: #ffffff;
+  --bg-elevated: #fcfcfc;
+
+  --brand-yellow: #dca300;
+  /* Darker yellow for text/icon contrast */
+  --brand-yellow-glow: rgba(220, 163, 0, 0.15);
+  --brand-yellow-hvr: #b88800;
+
+  --text-main: #111111;
+  --text-muted: #555555;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+/* THEME BUTTON - DEFAULT (DARK MODE) */
+.theme-btn {
+  background: rgba(242, 202, 0, 0.1);
+  border: 1px solid rgba(242, 202, 0, 0.3);
+  color: var(--brand-yellow);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-left: 15px;
+  box-shadow: 0 0 15px rgba(242, 202, 0, 0.15);
+}
+
+.theme-btn:hover {
+  background: var(--brand-yellow);
+  color: #000;
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 0 25px rgba(242, 202, 0, 0.4);
+}
+
+/* THEME BUTTON - LIGHT MODE */
+body.light-theme .theme-btn {
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  color: #111;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .theme-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.theme-btn i {
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+body.light-theme .theme-btn i {
+  transform: rotate(360deg);
+}
+
+/* LIGHT THEME AESTHETIC FIXES */
+/* Typography Overrides */
+body.light-theme .logo-text,
+body.light-theme .hero-title,
+body.light-theme .assist-header h2,
+body.light-theme .assist-text p strong,
+body.light-theme .assist-features h3,
+body.light-theme .assist-feature-item-text h4,
+body.light-theme .info-card h2,
+body.light-theme .leader-info h3,
+body.light-theme .manifesto-block p,
+body.light-theme .footer-col h4,
+body.light-theme .contact-header h2,
+body.light-theme .section-title,
+body.light-theme .stat-card h3,
+body.light-theme .contact-form label,
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea,
+body.light-theme .contact-form select {
+  color: var(--text-main);
+}
+
+/* Gradients for Text */
+body.light-theme .hero-title span,
+body.light-theme .assist-header h2 span,
+body.light-theme .section-title span,
+body.light-theme .about-hero h1 span,
+body.light-theme .contact-header h2 span {
+  background: linear-gradient(135deg, var(--brand-yellow), #222);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .hero-subtitle,
+body.light-theme .footer-brand p {
+  color: var(--text-muted);
+}
+
+/* Backgrounds & Overlays */
+body.light-theme .hero {
+  background: linear-gradient(135deg, rgba(244, 246, 248, 0.95), rgba(244, 246, 248, 0.85));
+  background-blend-mode: overlay;
+}
+
+body.light-theme .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(242, 202, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea,
+body.light-theme .contact-form select {
+  background: var(--bg-surface);
+  border-color: var(--glass-border);
+  color: var(--text-main);
+}
+
+body.light-theme .contact-form select option {
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+body.light-theme nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and Navigation */
+body.light-theme .logo-text {
+  color: var(--text-main);
+}
+
+body.light-theme .nav-links a {
+  color: var(--text-main);
+}
+
+body.light-theme .nav-links a:hover,
+body.light-theme .nav-links a.active {
+  color: var(--brand-yellow);
+}
+
+/* Buttons */
+body.light-theme .btn-primary {
+  background: var(--brand-yellow);
+  color: #000;
+}
+
+body.light-theme .btn-primary:hover {
+  background: var(--brand-yellow-hvr);
+  color: #000;
+}
+
+body.light-theme .btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--glass-border);
+}
+
+body.light-theme .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Box Shadows & Glows */
+body.light-theme .assist-section,
+body.light-theme .ecosystem-section {
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.03), 0 20px 50px rgba(0, 0, 0, 0.03);
+}
+
+body.light-theme .invite-card,
+body.light-theme .eco-card,
+body.light-theme .info-card {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .invite-title {
+  color: var(--text-main);
+}
+
+body.light-theme .stat-card:hover,
+body.light-theme .eco-card:hover,
+body.light-theme .service-card:hover,
+body.light-theme .leader-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(220, 163, 0, 0.3);
+}
+
+/* Specific Sections */
+body.light-theme footer,
+body.light-theme .manifesto-section {
+  background: #fdfdfd;
+}
+
+body.light-theme .feature-item h4 {
+  color: var(--text-main);
+}
+
+body.light-theme .testimonial-card {
+  background: rgba(255, 255, 255, 0.85);
+  /* Slightly less opaque white in light mode to contrast against off-white background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .feature-image img {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .feature-glow {
+  display: none;
+}
+
+body.light-theme .comet-border::after {
+  background: var(--bg-surface);
+}
