@@ -1,7 +1,7 @@
 function doPost(e) {
   try {
     // 1. Open the specific Google Sheet document (by name)
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("web_contact");
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("messages");
     
     // 2. Extract values from the incoming POST request form data
     // Assuming the form sends fields named exactly as below
