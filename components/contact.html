@@ -35,7 +35,7 @@
         <div class="form-row">
           <div class="form-group">
             <label>I am a...</label>
-            <select required>
+            <select name="type" required>
               <option value="" disabled selected>Select an option</option>
               <option value="job_seeker">Job Seeker</option>
               <option value="employer">Employer</option>
@@ -44,22 +44,22 @@
           </div>
           <div class="form-group">
             <label>Your Name</label>
-            <input type="text" placeholder="Enter your full name" required />
+            <input type="text" name="name" placeholder="Enter your full name" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="Enter your phone number" required />
+            <input type="tel" name="phone" placeholder="Enter your phone number" required />
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" placeholder="Enter your email address" />
+            <input type="email" name="email" placeholder="Enter your email address" />
           </div>
         </div>
         <div class="form-group">
           <label>Your Message</label>
-          <textarea rows="4" placeholder="How can we help you?" required></textarea>
+          <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;"
           id="contactSubmitBtn">Send Message</button>
@@ -99,3 +99,74 @@
     </div>
   </div>
 </section>
+
+<script>
+// Contact Form Submission Handler
+function handleContactSubmit(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('mainContactForm');
+  const btn = document.getElementById('contactSubmitBtn');
+  const overlay = document.getElementById('contactSuccessOverlay');
+  const networkConnecting = document.getElementById('networkConnectingContent');
+  const contactSuccess = document.getElementById('contactSuccessContent');
+
+  // Google Apps Script URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyLnYvo3G9ElALEHHyNfgMSo5eIxg_PFMiWCrkI3uOM_vRTzBB_BO1k66S1xyO84SAhUg/exec';
+
+  // Show loading state
+  btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Sending...";
+  btn.style.opacity = '0.8';
+  btn.style.pointerEvents = 'none';
+
+  // Reset overlay to show loading animation
+  networkConnecting.style.display = 'block';
+  contactSuccess.style.display = 'none';
+  overlay.classList.add('active');
+
+  // Create hidden iframe to bypass CORS
+  const iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.name = 'hidden-iframe';
+  iframe.onload = function() {
+    // Success - iframe loaded
+    setTimeout(() => {
+      networkConnecting.style.display = 'none';
+      contactSuccess.style.display = 'block';
+      form.reset();
+    }, 2000);
+    
+    setTimeout(() => {
+      overlay.classList.remove('active');
+      btn.innerHTML = "Send Message";
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      // Clean up iframe
+      if (iframe && iframe.parentNode) {
+        iframe.parentNode.removeChild(iframe);
+      }
+    }, 5000);
+  };
+  
+  iframe.onerror = function() {
+    // Error - iframe failed to load
+    alert("Sorry, there was an error sending your message. Please try again or contact us directly on WhatsApp.");
+    overlay.classList.remove('active');
+    btn.innerHTML = "Send Message";
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+    // Clean up iframe if it exists in DOM
+    if (iframe && iframe.parentNode) {
+      iframe.parentNode.removeChild(iframe);
+    }
+  };
+  
+  document.body.appendChild(iframe);
+
+  // Submit the form using the iframe
+  form.target = 'hidden-iframe';
+  form.action = scriptURL;
+  form.method = 'POST';
+  form.submit();
+}
+</script>
